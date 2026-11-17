@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<!-- 
+		Aula 2: Imagens, Listas e Divisões
+		Adicionamos novas tags essenciais para estruturar o conteúdo.
+	-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aula 2: Listas, Imagens w Divisões</title>
+	
+	<style>
+	/*Estilos globais (os mesmos da Aula 1)*/
+	body{
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #e9ecef;
+		color: #343a40;
+		
+	}
+	.container{
+		max-width: 900px;
+		margin: 40px auto;
+		padding: 30px;
+		background-color: #ffffff;
+		border-radius: 12px;
+		box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+	}
+	/*Estilo para o cabeçalho principal*/
+	h1{
+		color: #007bff; /*Azul primário*/
+		border-bottom: 2px solid #007bff;
+		padding-bottom: 30px;
+		text-align: center;
+	}
+	/*--------------------*/
+	/*NOVOS ESTILOS PARA A AULA 2*/
+	/*--------------------*/
+	/*Estilos para o Menu (Lista não ordenada)*/
+	nav ul{
+		list-style: none; /*Remove os marcadores de lista padrão*/
+		padding: 0;
+		display: flex; /*Faz os itens ficarem lado a lado*/
+		justify-content: center;
+		gap: 20px;
+		margin-bottom: 40px;
+		border-bottom: 1px solid #dee2e6;
+		padding-bottom: 15px;
+	}
+	nav a{
+		text-decoration: none;
+		color: #495057;
+		font-weight: bolt;
+		padding: 5px 10px;
+		border-radius: 5px;
+		transition: color 0.3s, background-color 0.3s;
+	}
+	nav a:hover{
+		color: #007bff
+			background-color: #e9f3ff;
+	}
+	/*Estilo para a imagem*/
+		.image-container {
+			text-align: center;
+			margin: 30px 0;
+	}
+	img{
+			max-width: 100%; /*Garante que a imagem se ajuste ao container*/
+		heigh: auto;
+			border-radius: 10px;/*cantos arredondados*/
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	}
+	/*Estilo para a Lista de Tarefas (Lista ordenada)*/
+	.tasks-section{
+			margin-top: 40px;
+			text-align: left;
+	}
+	ol{
+		padding-left: 20px;
+	}
+	ol li{
+		margin-bottom: 8px;
+		font-size: 1.05em;
+	}
+	</style>
+</head>
+<body>
+
+	<!--
+		O <nav> é uma tag semântica que usamos para agrupar links de navegação.
+		Dentro dela, usamos uma Lista Não Ordenada <ul> para o menu.
+	-->
+	<nav>
+		<!--A tag <ul> cria uma lista não ordenada (bullets)-->
+	<ul>
+			<!--A tag <li> define cada item da lista-->
+		<li><a href="#">Início</a></li>
+			<li><a href="#">Sobre Nós</a></li>
+			<li><a href="#">Serviços</a></li>
+			<li><a href="#">Contato</a></li>
+	</ul>
+	</nav>
+	<!--O <div> é um contêiner genérico, usado para agrupar elementos-->
+	<div class="container">
+	<h1>Aula 2: Organizado o Conteúdo</h1>
+	
+	<!--Demonstração da tag de Imagem-->
+	<div class="image-container">
+		<!--
+		A tag <img> é self-closing (não precisa de tag de fechamento)
+		Atributos obrigatórios:
+		-src: O caminho para o arquivo da imagem (usamos um placeholder)
+		-alt: O texto alternativo, crucial para acessibilidade
+		-->
+		<img
+			src="https://placehold.co/800x200/4a90e2/FFFFFF?text=Imagem+Exemplo"
+			alt="Um banner simples com texto 'Imagem Exemplo"e fundo azul."
+		>
+	</div>
+	<p>
+	Vimos como usar a tag <code>&lt;ul&gt</code> (lista não ordenada) para criar menus e 
+	como a tag <code>&lt;img&gt;</code> é fundamental para adicionar elementos visuais à 
+	nossa página. Lembre-se, o atributo **alt** é vital para descrever a imagem para pessoas 
+	com deficiência visual e para SEO (motores de busca).
+	</p>
+	<!--Seção para demonstrar a Lista Ordenada-->
+	<div class="tasks-section">
+		<h2>Próximos Passos (Lista Ordenada)</h2>
+		<!--A tag <ol> cria uma lista ordenada (números)-->
+		<ol>
+		<li>Endender a diferença entre <code>&lt;ul&gt;</code> e <code>&lt;ol&gt</code></li>
+		<li>Mudar o link de destino (href) dos itens no menu.</li>
+		<li>Substituir a imagem placeholder por uma real (usando seu próprio link).</li>
+		<li>Começar a entender o que são Divs ('<div>') e como eles funcionam com o CSS.</li>
+		</ol>
+	</div>
+	<!--
+			Observação sobre <div>:
+			o <div> é o contêiner mais usado no HTML. Ele não tem significado próprio, mas é exelente para agrupar 
+			elementos e aplicar estilos com CSS (como fizemos com a classe "container" e "tasks-section" e "image-container").
+	-->
+	
+	<p style="text-align: center; margin-top: 40px; color: #6c757d;">
+		Parabéns por completar a Aula 2! Continue praticando.
+	</p>
+	</div>
+</body>
+</html>

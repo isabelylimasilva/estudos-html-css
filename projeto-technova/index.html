@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TechNova Solutions - Tecnologia & Inovação</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <h1>TechNova</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#nome">Início</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="home" class="hero">
+            <h2>Transformando o Futuro com Tecnologia</h2>
+            <p>Soluções em hardware, software e consultoria para o seu negócio.</p>
+            <a href="#produtos" class="btn">Ver Produtos</a>
+        </section>
+
+        <section id="sobre" class="container">
+            <h2>Sobre a TechNova</h2>
+            <p>Fundada em 2026, a TechNova Solutions é líder no desenvolvimento de 
+                soluções computacionais, oferecendo equipamentos de ponta e consutoria 
+                técnica especializada para empresas de todos os portes.</p>
+        </section>
+
+        <section id="produtos" class="container">
+            <h2>Nossos Produtos</h2>
+            <div class="grid-produtos">
+                
+                <div class="card-produto">
+                    <h3>Servidor Rack TechNova X1</h3>
+                    <p>Alta performance para banco de dados e aplicações corporativas.</p>
+                    <span class="preco">R$12.500,00</span>
+                    <button onclick="adicionarAoCarrinho('Servidor Rack TechNova X1')">Comprar</button>
+                </div>
+                
+                <div class="card-produto">
+                    <h3>Notebook Workstation Pro</h3>
+                    <p>Processamento pesado para engenheiros, desenvolvedores e designers.</p>
+                    <span class="preco">R$8.900,00</span>
+                    <button onclick="adicionarAoCarrinho('Notebook Workstation Pro')">Comprar</button>
+                </div>
+
+                <div class="card-produto">
+                    <h3>Licença Cloud ERP (Anual)</h3>
+                    <p>Gerenciamento empresarial completo em nuvem com alta segurança.</p>
+                    <span class="preco">R$3.200,00</span>
+                    <button onclick="adicionarAoCarrinho('Licença Cloud ERP')">Comprar</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contato" class="container">
+            <h2>Fale Conosco / Orçamento</h2>
+            <form id="formContato">
+                <div class="campo">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" required placeholder="Digite seu nome">
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required placeholder="seuemail@exemplo.com">
+                </div>
+
+                <div class="campo">
+                    <label for="assunto">Assunto:</label>
+                    <select id="assunto">
+                        <option value="orcamento">Solicitar Orçamento</option>
+                        <option value="suporte">Suporte Técnico</option>
+                        <option value="outros">Outros Assuntos</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" rows="4" required placeholder="Como podemos ajudar?"></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy;2026 TechNova Solutions. Todos os direitos reservados.</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

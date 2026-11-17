@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<!--
+		AULA 6: RESPONSIVIDADE E MEDIA QUERIES
+		O site agora se adapta perfeitamente a telas de celular e tablet.
+		A meta tag <meta name="viewport" ...> no topo é essencial para isso!
+	-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aula 6: Tornando o Site Responsivo</title>
+	
+	<style>
+	/* ------------------------- */
+	/*1. VARIÁVEIS CSS (Custom Properties)*/
+	/* ------------------------- */
+	:root{
+		--cor-primaria: #007bff; /*Azul*/
+		--cor-secundaria: #343a40; /*Cinza Escuro*/
+		--cor-fundo: #e9ecef;
+		--cor-clara: #ffffff;
+		--cor-sucesso: #28a745; /*Verde*/
+		--tamanho-base: 16px;
+		--espacamento-padrao: 1rem;
+		--sombra-caixa: 0 4px 15px rgba(0, 0, 0, 0.1);
+	}
+		/* ------------------------- */
+		/*2. MODELO DE CAIXA (Box Model) - Fundamentos*/
+		/* ------------------------- */
+		*{
+		box-sizing: border-box;
+	}
+	/*Estilos globais*/
+	body{
+		font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: var(--cor-fundo);
+		color: var(--cor-secundaria);
+		font-size: var(--tamanho-base);
+	}
+	.container{
+		max-width: 900px;
+		margin: 40px auto;
+		padding: 30px;
+		background-color: var(--cor-clara);
+		border-radius: 12px;
+		box-shadow: var(--sombra-caixa);
+	}
+	
+	/* ------------------------- */
+	/*Estilos do <header> e Navegação*/
+	/* ------------------------- */
+	header{
+		background-color: var(--cor-primaria);
+		color: var(--cor-clara);
+		padding: 1rem 0;
+	}
+	h1{
+		color: var(--cor-secundaria);
+		border-bottom: 2px solid var(--cor-primaria);
+		padding-bottom: 10px;
+		margin-bottom: 1.5rem;
+		text-align: center;
+		font-size: 2.5rem;
+	}
+		/*Estilos de Menu Padrão (Desktop)*/
+	nav ul{
+		list-style: none;
+		padding: 0;
+		display: flex; /*Mantém os itens a lado em telas grandes*/
+		justify-content: center;
+		gap: var(--espacamento-padrao);
+		margin: 0;
+	}
+	nav a{
+		text-decoration: none;
+		color: var(--cor-clara);
+		font-weight: bold;
+		padding: 0.5rem 1rem;
+		border-radius: 5px;
+		transition: color 0.3s, background-color 0.3s;
+	}
+	nav a:hover{
+		color: var(--cor-primaria);
+		background-color: var(--cor-clara);
+	}
+	/* ------------------------- */
+	/*Estilos de Seções e Conteúdo*/
+	/* ------------------------- */
+	.image-container{
+		text-align: center;
+		margin: 2rem 0;
+	}
+	img{
+		max-width: 100%;
+		height: auto;
+		border-radius: 10px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	}
+	.form-section{
+		padding: 1.5rem;
+		border: 1px solid #ced4da;
+		border-radius: 8px;
+		background-color: #f8f9fa;
+	}
+	/*Mantendo estilos de formulário para consistência*/
+	
+	.form-group{ margin-bottom: 1rem; text-align: left; }
+	label{ display: block; font-weight: bold; margin-bottom: 0.3rem; color: var(--cor-secundaria); }
+	
+	input[type="text"], input[type="email"], textarea{
+		width: 100%; padding: 0.6rem; border: 1px solid #ced4da;
+		border-radius: 4px; box-sizing: border-box; font-size: 1em;
+	}
+	button{
+		display: block; width: 100%; padding: 0.8rem;
+		background-color: var(--cor-sucesso); color: var(--cor-clara);
+		border: none; border-radius: 4px; font-size: 1.1rem;
+		cursor: pointer; transition: background-color 0.3s;
+		margin-top: 1.25rem;
+	}
+	button:hover{ background-color: #218838; }
+	/* ------------------------- */
+	/*Estilos do <footer>*/
+	/* ------------------------- */
+	footer{
+		background-color: var(--cor-secundaria);
+		color: #adb5bd;
+		text-align: center;
+		padding: 1.25rem 0;
+		margin-top: 3.125rem;
+		border-top: 5px solid var(--cor-primaria);
+	}
+	footer p{
+		margin: 0.3rem 0;
+		font-size: 0.9rem;
+	}
+	
+	/* ============================== */
+	/*3. MEDIA QUERIES (RESPONSIVIDADE) - NOVO*/
+	/* ============================== */
+	/*Este bloco de código SÓ será aplicado quando a tela tiver no máximo 600px de largura.*/
+	@media (max-width: 600px){
+	
+		/*Ajuste para o Container*/
+		container{
+		/*Remove a margem superior e inferior, e reduz o padding.
+		Isso usa melhor o espaço de telas pequenas.*/
+			margin: 0 auto;
+			padding: 15px;
+		}
+		/*Ajuste para o Menu (Horizontal -> Vertical)*/
+		nav ul{
+		flex-direction: column; /*Faz os links do menu ficarem um embaixo do outro*/
+		gap: 0; /*Remove o espaçamento lateral*/
+		}
+		nav li{
+			width: 100%; /*Faz o item ocupar toda a largura*/
+			text-align: center;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2); /*Linha divisória*/
+		}
+		nav li:last-child{
+			border-bottom: none;
+		}
+		nav a{
+			display: block; /*Faz o link preencher todo o <li>*/
+			padding: 1rem;
+		}
+		
+		/*Reduzindo o tamanho do título principal em telas pequenas*/
+		h1{
+			font-size: 2rem;
+		}
+		
+		/*Remove a margem superior do rodapé em telas pequenas para economizar espaço*/
+		footer{
+			margin-top: 30px;
+		}
+	}
+	</style>
+</head>
+<body>
+	<!-- O <header> agrupa o topo da página, incluindo a navegação -->
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#">Início</a></li>
+				<li><a href="#">Sobre Nós</a></li>
+				<li><a href="#">Serviços</a></li>
+				<li><a href="#">Contato</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<!-- O <main> contém o conteúdo principal e exclusivo da página -->
+	<main class="container">
+	
+		<h1>Aula 6: Responsividade com Media Queries</h1>
+		
+		<p>
+		Parabéns! Sua página agora pe **responsiva**. Para testar, visualize a página e reduza a largura 
+		da janela do navegador. Quando a largura for menor que 600px, o menu de navegação irá se reorganizar, 
+		ficando vertical (um link abaixo do outro).
+		</p>
+		<p>
+		Lembre-se da importância da tag <code>&lt;meta name="viewport" ...&gt;</code> no <code>&lt;head&gt;</code>. É
+		ela que avisa o navegador para ajustar a escala da página à largura do dispositivo!
+		</p>
+	<!-- Uma <section> para a imagem -->
+	<section class="image-section">
+		<div class="image-container">
+		<img
+		src="https://placehold.co/800x150/007bff/FFFFFF?text=AULA+6:+RESPONSIVIDADE+PRONTA"
+		alt="Um banner com o texto 'AULA 6: RESPONSIVIDADE PRONTA' em fundo azul."
+		>
+		</div>
+	</section>
+	<!-- Uma <section> para o formulário -->
+	<section class="form-section">
+		<h2>Entre em Contato</h2>
+		<form action="#" method="POST">
+		
+			<!-- Campo para o Nome -->
+			<div class="form-group">
+			<label for="nome">Seu Nome:</label>
+			<input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+			</div>
+			
+			<!-- Campo para o Email -->
+			<div class="form-group">
+			<label for="email">Seu Email:</label>
+			<input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
+			</div>
+			
+			<!-- Campo para a Mensagem (Área de Texto Maior) -->
+			<div class="form-group">
+			<label for="mensagem">Mensagem:</label>
+			<textarea id="mensagem" name="mensagem" rows="5" required placeholder="Digite sua mensagem aqui..."></textarea>
+			</div>
+			
+			<button type="submit">Enviar Mensagem</button>
+		</form>
+	</section>
+	<!-- Uma <section> para os pontos chave -->
+	<section class="tasks-section">
+	<h2>Pontos Chave da Aula 6</h2>
+	<ol>
+		<li>O `@media` permite aplicar estilos apenas sob certas condições (ex: largura da tela).</li>
+		<li>`max-width: 600px` define um breakpoint (ponto de quebra) para telas pequenas.</li>
+		<li>Usamos `flex-direction: column` para mudar o menu de horizontal para vertical.</li>
+		<li>
+		Reduzimos padding e margin em telas pequenas para otimizar o uso do espaço.</li>
+	</ol>
+	</section>
+	
+		<p style="text-align: center; margin-top: 2.5rem; color: #6c757d;">
+		**Fim do Curso Básico.** Você construiu uma página funcional, bem estruturada, estilizada e, agora, responsiva!
+		</p>
+		</main>
+		
+	<!-- O  <footer> contém informações de rodapé -->
+	<footer>
+		<p>&copy; 2024 Primeira Página HTML. Todos os direitos reservados.</p>
+		<p>Desenvolvido no Curso de HTML Básico.</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+	<!--
+		O <head> contém informações sobre o documento que não são exibidas diretamente na página
+	-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- O <title> define o que aparece na aba do navegador-->
+	<title>Primeira Aula de HTML Básico</title>
+	
+	<!--
+		Bloco de <style> para adicionar um pouco de CSS (Estilização)
+		Isso deixa a página com uma aparência mais agradável.
+	-->
+	<style>
+	/*Define a fonte padrão para o corpo da página*/
+	body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 20px;
+		background-color: #f4f4f9;
+		color: #333;
+		text-align: center;/*Centraliza o texto*/
+	}
+	/*Estilo para o cabeçalho principal*/
+	h1{
+		color: #4a90e2; /*Azul vibrante*/
+		border-bottom: 2px solid #4a90e2;
+		padding-bottom: 10px;
+		margin-bottom: 20px;
+	}
+	/*Estilo para parágrafos*/
+	p{
+		font-size: 1.1em;
+		line-height: 1.6;
+		max-width: 800px;
+		margin: 20px auto; /*Centraliza o parágrafo na página*/
+	}
+	/*Estilo para o link*/
+		.link-container {
+		margin-top: 30px;
+	}
+	
+	a{
+		display: inline-block;
+		backgroung-color: #f4f4f9; /*Verde amigável*/
+		color: black;
+		padding: 10px 20px;
+		text-decoration: none; /*Remove o sublinhado padrão*/
+		border-radius: 8px; /*Cantos arredondados */
+		transition: background-color 0.3s;
+	}
+	a:hover {
+		background-color: #45a049; /*Cor mais escura ao passar o mouse*/
+	}
+	</style>
+</head>
+<body>
+	<!--
+	O <body> contém todo o conteúdo visível que o usuário vê na tela.
+	-->
+	<!-- Um cabeçalho de nível 1 (o mais importante) -->
+	<h1>Bem-vindo à Minha Primeira Página Web!</h1>
+	<!-- Um parágrafo de texto -->
+	<p>
+		Esta página foi construída usando apenas HTML e um pouco de CSS para estilização.
+		O HTML define a estrutura, e o CSS cuida da aparência (cores, fontes, layout).
+		Você já deu o primeiro passo na jornada do desenvolvimento web!
+	</p>
+	<!-- Outro parágrafo mais específico -->
+	<p>
+		Você pode inspecionar o código deste documento no seu navegador (clique com o botão direito e escolha "Inspecionar") para ver como as tags funcionam.
+	</p>
+	<!-- Um link clicável. O atributo 'href' é crucial para a navegação.'-->
+	<div class="link-container">
+		<a href="https://developers.google.com/web/fundamentals" target="_blank">
+			Aprenda mais sobre Desenvolvimento Web
+		</a>
+		</div>
+		<!-- Comentário final: Parabéns! -->
+		<!--Continue praticando e experimentando novas tags! -->
+</body>
+</HTML>
